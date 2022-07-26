@@ -1,0 +1,68 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Your Cat</title>
+</head>
+<style>
+    body{
+        background-color: indigo;
+        text-align: center;
+    }
+
+    button{
+        background-color: rgb(9, 182, 110);
+        border-radius: 8%;
+        height: 2.7rem;
+        width: 7rem;
+        }
+
+    button:hover{
+        background-color: rgb(72, 129, 72);
+        height: 3rem;
+        width: 8rem;
+        box-shadow: 20px 20px 20px rgb(29, 28, 28);
+        cursor: pointer;
+        }
+
+    div{
+        border: .1rem solid cornflowerblue;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    img{
+        height: 28%;
+        width: 28%;
+        margin: 1rem;
+        border-radius: 100%;
+        box-shadow: 20px 20px 20px black;
+        
+    }
+
+    #contain{
+        border: .1rem solid royalblue;   
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+</style>
+<body>
+    <div>
+
+        <h2 id="no1">Challange Number 2 : Cat Generator</h2>
+
+        <button onclick="g()">Generate Cat</button> 
+
+        <div id="contain">
+           
+        </div>
+
+        <script src="cat.js"></script>
+       
+    </div>
+</body>
+</html>

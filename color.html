@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Button</title>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    body{
+        background-color: brown;
+        
+    }
+</style>
+
+<body>
+    <select name="dropbox" id="background" onchange="coloring(this)" >
+
+        <option value="random">random</option>
+    
+        <option value="blue">blue</option>
+    
+        <option value="reset">reset</option>
+
+        <option value="green">green</option>
+
+    </select>   
+    
+    <button type="button" class="btn btn-primary" id="blue">facebook
+    </button>
+
+    <button type="button" class="btn btn-danger" id="red">yahoo
+    </button>
+
+    <button type="button" class="btn btn-success" id="green">google
+    </button>
+
+    <script src="colorbutton.js"></script>    
+</body>
+</html>
