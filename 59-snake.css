@@ -1,0 +1,12 @@
+body {
+    background-color: cyan;
+}
+
+#game_container {
+    text-align: center;
+}
+
+#board {
+    border: 3px solid;
+
+}
