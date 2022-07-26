@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+	<title>jajaquery</title>
+
+	<script type="text/javascript"
+		    src="https://code.jquery.com/jquery-3.5.1.js"
+		    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			crossorigin="anonymous"></script>
+
+	<script src="jquery-ui/jquery-ui.js"></script>				
+
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">	
+
+	<style type="text/css">
+		
+	body{
+
+		background-color: #1961a2
+	}
+
+	#container{
+
+		border-radius: 2rem;
+
+		background-color: white;
+
+		margin-left: 12rem;
+
+		margin-top: 6rem;
+
+		width: 46rem;
+
+		height: 30rem;
+	}
+
+	h1{
+		position: relative;
+
+		color: cyan;
+
+		top: 1rem;
+
+		padding: .7rem;
+
+	}
+
+	input{
+
+		position: absolute;
+
+		top: .43rem;
+
+		left: 23rem;
+
+		font-size: 1.7rem;
+
+		border-radius: .5rem;
+
+		padding-left: .7rem;
+
+		padding-top: .2rem;
+
+	}
+
+		#submit{
+
+			background-color: black;
+
+			color: orange;
+
+			border-radius: .6rem;
+			
+			font-size: 1.9rem;
+
+			padding: .5rem;
+
+			position: absolute;
+
+			left: 35.5rem;
+
+			top: 26.5rem;
+		}
+
+		#submit:hover{
+
+			background-color: #4b5646;
+		}
+
+		#congo{
+
+			margin-left: 1rem;
+
+			display: none;
+
+			color:lime;
+
+			font-size: 1.4rem;
+		}
+
+		#empty{
+
+			font-size: 1.4rem;
+
+			color: red;
+		}
+
+		#error{
+			margin-left:1rem;
+
+			font-size: 1.4rem;
+
+			color: red;
+		}
+	
+	</style>
+
+<body>	
+
+	<div id="container">
+	
+	<h1>EMAIL
+
+	<input id="email" type="text" placeholder="etc@gmail.com"></h1>
+
+	<h1>PHONE NUMBER
+
+	<input id="phone" type="text" placeholder="etc 1234"></h1>
+
+	<h1>PASSWORD
+
+	<input id="password" type="password" ></h1>
+
+	<h1>CONFIRM PASSWORD
+
+	<input id="confirm-password" type="password" ></h1>
+
+	<button id="submit">Submit</button>
+
+	<div id="congo">you did it</div>
+
+	<div id="empty"></div>
+
+	<div id="error"></div>
+
+
+</div>
+
+	
+	<script type="text/javascript">
+
+	function isEmail(email) {
+
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+
+    return regex.test(email)
+	}	
+
+	$("#submit").click(function() {
+
+	var empty=""
+
+	var error=""
+
+	if ($("#email").val()=="") {
+
+	empty+="email is empty<br>"	
+	
+	}
+
+	if (isEmail($("#email").val())==false) {
+
+	error+="email not valid<br>"
+
+	}	
+		
+	if ($("#phone").val()=="") {	
+
+	empty +="phone number is empty<br>"}
+
+	if ($.isNumeric($("#phone").val())==false) {
+
+	error+="phone number should be numeric<br>"	
+
+	}
+
+	if ($("#password").val()=="") {
+
+	empty +="password is empty<br>"
+		
+	}
+	
+	if ($("#confirm-password").val()=="") {
+
+	empty+="confirm password is empty<br>"	
+
+	}
+
+	if ($("#password").val()!=$("#confirm-password").val()) {
+
+	error +="passwords are not same<br>"	
+	}
+	
+	if (empty!="") {
+
+	error +=empty
+	}
+
+	if (error!="") {
+	$("#error").html(error)}
+	
+
+else
+	{
+	$("#congo").show()
+
+	$("#error").hide()
+
+	}	// body...
+	})
+
+	</script>
+
+</body>
+</html>
