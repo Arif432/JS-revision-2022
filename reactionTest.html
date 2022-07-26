@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>THE REACTION TESTER GAME</title>
+
+	<script type="text/javascript"
+		    src="https://code.jquery.com/jquery-3.5.1.js"
+		    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+			crossorigin="anonymous"></script>
+
+	<style type="text/css">
+	#body{
+		background-color: brown;
+		 }
+
+	#shape{
+		display: none;
+		position: relative;
+		}
+
+	</style>
+</head>
+<body id="body">
+		<h1>CHECK YOUR REFLEXES</h1>
+		<h4>click on the circles in boxes as fast as you can</h4>
+		<h2>YOUR TIME:<span id="time"></span></h2>
+		<div id="shape"></div>
+
+		<script type="text/javascript">
+
+		var start= new Date().getTime()
+
+		function color() {
+			// body...
+		var color="#"
+
+		var letters="0123456789ABCDEF".split("")
+
+		for (var i = 0; i <6; i++) {
+
+		color += letters[Math.floor(Math.random() * 16)];	
+		}
+
+		return(color)
+
+		}
+
+		function reappear() {
+
+		var top=Math.random()*23
+
+		var left=Math.random()*23	
+
+		var width=Math.floor((Math.random()*10)+7)
+
+		if (Math.random()>0.5) {
+
+		document.getElementById('shape').style.borderRadius="50%"	
+
+		}
+		
+		else{
+
+		document.getElementById('shape').style.borderRadius="0%"		// body...
+		}
+
+		document.getElementById('shape').style.top=top+"rem"
+
+		document.getElementById('shape').style.left=left+"rem"
+
+		document.getElementById('shape').style.width=width+"rem"
+
+		document.getElementById('shape').style.height=width+"rem"
+
+		document.getElementById('shape').style.backgroundColor=color()
+
+		$("#shape").show()	
+
+		start=new Date().getTime()
+			// body...
+		}
+
+		setTimeout(reappear,Math.random()*2000)
+
+		$("#shape").click(function () {
+
+		$("#shape").hide()
+
+		var end=new Date().getTime()
+
+		var total=(end-start)/1000
+
+		$("#time").html(total+"  "+"sec")
+
+		setTimeout(reappear,Math.random()*2000)
+
+		})	
+		</script>	
+</body>		
+</html>
+
+		
